@@ -1,0 +1,17 @@
+{
+  "name": "signalk-calypso-ultrasonic",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha",
+    "debug": "DEBUG=signalk-calypso* nodemon ."
+  },
+  "keywords": [],
+  "author": "Fabian Tollenaar <fabian@decipher.industries> (https://decipher.industries)",
+  "license": "UNLICENSED",
+  "dependencies": {
+    "debug": "^4.0.1",
+    "noble": "^1.9.1"
+  }
+}
