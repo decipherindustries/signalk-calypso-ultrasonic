@@ -1,5 +1,11 @@
 # Signal K Calypso Ultrasonic plugin
 
+> Signal K plugin for connecting to and receiving wind data from a Calypso Ultrasonic wireless wind instrument.
+
+## @TODO
+- [ ] Signal K plugin skeleton + config for writing flags
+- [x] Writing flags to the device if they were set in config
+- [ ] Figure out if we should be using angleApparent or directionApparent ?
 
 ## License
 
