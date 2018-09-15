@@ -4,6 +4,16 @@ module.exports = function signalkCalypsoUltrasonic (app) {
   const plugin = {}
   let _ultrasonic = null
 
+  plugin.STATUS = {
+    retrying: 'Retrying to connect, retry',
+    searching: 'Searching for Ultrasonic',
+    found_ultrasonic: 'Found Ultrasonic',
+    connecting: 'Connecting...',
+    connected: 'Connected to Ultrasonic',
+    received_characteristic: 'Received characteristic',
+    subscribed_to_dataservice: 'Subscribed to data service'
+  }
+
   plugin.Ultrasonic = Ultrasonic
   plugin.id = 'calypso-ultrasonic'
   plugin.name = 'Calypso Ultrasonic plugin for Signal K'
@@ -46,10 +56,16 @@ module.exports = function signalkCalypsoUltrasonic (app) {
       maxRetries: Infinity
     }
 
+    console.log('OPTIONS', options)
+
     _ultrasonic = new plugin.Ultrasonic(opts)
 
     _ultrasonic.on('delta', delta => {
-      app.handleMessage('pluginId', delta)
+      app.handleMessage(plugin.id, delta)
+    })
+
+    _ultrasonic.on('status', status => {
+      app.setProviderStatus(`${plugin.STATUS[status.status]}${status.data === '' ? '' : `: ${status.data}`}`)
     })
 
     _ultrasonic.start()

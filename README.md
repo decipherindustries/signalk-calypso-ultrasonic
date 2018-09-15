@@ -46,6 +46,7 @@ The class accepts the following options:
 
 The class emits the folowing events:
 
+- `deviceInfo`: information about the device state. Values are a envelope object with keys `kind` (name of the characteristic) and `value` (characteristic value)
 - `delta`: a Signal K delta message (see below)
 - `data`: the decoded data model in intermediate (plain object) format. The model has the following keys: `windSpeedApparent`, `windAngleApparent`, `batteryLevel`, `temperature`, `roll`, `pitch`, `compass`, `timestamp`; where each value is represented in SI units (i.e. Kelvin for temperature, radians for angles and m/s for velocity). Battery level is a float between 0-1.
 

@@ -1,15 +1,15 @@
 {
   "name": "signalk-calypso-ultrasonic",
-  "version": "1.0.0",
-  "description": "",
+  "version": "1.0.1",
+  "description": "Signal K plugin for connecting to and receiving wind data from a Calypso Ultrasonic wireless wind instrument",
   "main": "index.js",
   "scripts": {
     "test": "DEBUG=signalk-calypso* node ./test/standalone",
     "dev": "DEBUG=signalk-calypso* nodemon ./test/standalone"
   },
-  "keywords": [],
+  "keywords": ["signalk-node-server-plugin"],
   "author": "Fabian Tollenaar <fabian@decipher.industries> (https://decipher.industries)",
-  "license": "UNLICENSED",
+  "license": "Apache-2.0",
   "dependencies": {
     "debug": "^4.0.1",
     "noble": "^1.9.1"
