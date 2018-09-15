@@ -56,7 +56,19 @@ module.exports = function signalkCalypsoUltrasonic (app) {
       maxRetries: Infinity
     }
 
-    console.log('OPTIONS', options)
+    if (options && typeof options === 'object') {
+      if (options.hasOwnProperty('setRate') && (options.setRate === 1 || options.setRate === 4 || options.setRate === 8)) {
+        opts.setRate = options.setRate
+      }
+
+      if (options.hasOwnProperty('setCompass') && (options.setCompass === 1 || options.setCompass === 0)) {
+        opts.setCompass = options.setCompass
+      }
+
+      if (options.hasOwnProperty('maxRetries') && !isNaN(options.maxRetries)) {
+        opts.setCompass = options.maxRetries > 0 ? options.maxRetries : Infinity
+      }
+    }
 
     _ultrasonic = new plugin.Ultrasonic(opts)
 
