@@ -73,7 +73,7 @@ module.exports = function signalkCalypsoUltrasonic (app) {
     _ultrasonic = new plugin.Ultrasonic(opts)
 
     _ultrasonic.on('delta', delta => {
-      console.log('SENDING DELTA', JSON.stringify(delta))
+      // console.log('SENDING DELTA', JSON.stringify(delta))
       app.handleMessage(plugin.id, delta)
     })
 
