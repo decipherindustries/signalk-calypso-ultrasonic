@@ -51,7 +51,7 @@ The class emits the folowing events:
 
 ## Signal K delta output
 
-The Ultrasonic decoder outputs Signal K delta messages. (Read this)[http://signalk.org/specification/1.0.4/doc/data_model.html#delta-format] for more info on the delta format. Depending on wether the 9DOF/compass sensor is enabled, the following paths are emitted. Values are, as per the Signal K specification, represented in SI units (i.e. Kelvin for temperature, radians for angles and m/s for velocity). Battery level is a float between 0-1.
+The Ultrasonic decoder outputs Signal K delta messages. [Read this](http://signalk.org/specification/1.0.4/doc/data_model.html#delta-format) for more info on the delta format. Depending on wether the 9DOF/compass sensor is enabled, the following paths are emitted. Values are, as per the Signal K specification, represented in SI units (i.e. Kelvin for temperature, radians for angles and m/s for velocity). Battery level is a float between 0-1.
 
 - `environment/outside/temperature`
 - `environment/wind/angleApparent`
