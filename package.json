@@ -4,8 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "mocha",
-    "debug": "DEBUG=signalk-calypso* nodemon ."
+    "test": "node ./test/standalone",
+    "dev": "DEBUG=signalk-calypso* nodemon ./test/standalone"
   },
   "keywords": [],
   "author": "Fabian Tollenaar <fabian@decipher.industries> (https://decipher.industries)",
