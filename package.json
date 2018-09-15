@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "node ./test/standalone",
+    "test": "DEBUG=signalk-calypso* node ./test/standalone",
     "dev": "DEBUG=signalk-calypso* nodemon ./test/standalone"
   },
   "keywords": [],

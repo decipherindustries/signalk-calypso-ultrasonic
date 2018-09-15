@@ -1,4 +1,4 @@
-const { Ultrasonic } = require('../lib/ultrasonic')()
+const { Ultrasonic } = require('../')()
 
 const ultrasonic = new Ultrasonic({
   setRate: 4, // Hz
