@@ -72,6 +72,7 @@ All values/paths are emitted in the `self` context.
 - [x] Writing flags to the device if they were set in config
 - [ ] Figure out if we should be using `environment/wind/angleApparent` or `environment/wind/directionMagnetic` ?
 - [ ] Figure out how to implement unit tests that don't rely on an actual device
+- [ ] Add the configuration option to do combine values with other values in tree to enrich each delta with True Wind and such
 
 
 ## License
