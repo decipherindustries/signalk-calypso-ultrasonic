@@ -1,4 +1,4 @@
-const Ultrasonic = require('./ultrasonic')
+const Ultrasonic = require('./lib/ultrasonic')
 
 module.exports = function signalkCalypsoUltrasonic (app) {
   const plugin = {}

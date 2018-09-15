@@ -33,6 +33,7 @@ const ultrasonic = new Ultrasonic({
 
 ultrasonic.on('delta', delta => handleDeltaMessage(delta))
 ultrasonic.on('data', data => handleDataMessage(data))
+ultrasonic.start()
 ```
 
 The class accepts the following options:
