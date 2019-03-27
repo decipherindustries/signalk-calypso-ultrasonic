@@ -2,6 +2,11 @@
 
 > Signal K plugin for connecting to and receiving wind data from a Calypso Ultrasonic wireless wind instrument.
 
+## Requirements
+The plugin requires access to the OS' Bluetooth stack. This process differs on the different operating systems. Please refer to: https://github.com/noble/noble#linux. 
+
+After getting all the requirements, make sure that node can access the BT stack. See: https://github.com/noble/noble#running-on-linux. 
+
 
 ## Installation & usage (as Signal K plugin)
 Install this plugin using the Signal K app store or install it manually in the Signal K server directory:
