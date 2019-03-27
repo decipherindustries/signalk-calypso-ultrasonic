@@ -14,7 +14,7 @@
   "license": "Apache-2.0",
   "dependencies": {
     "debug": "^4.0.1",
-    "@abandonware/noble": "^1.9.2",
-    "@abandonware/bluetooth-hci-socket": "^0.5.3"
+    "@abandonware/noble": "^1.9.2-1",
+    "@abandonware/bluetooth-hci-socket": "^0.5.3-1"
   }
 }
