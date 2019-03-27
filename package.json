@@ -1,6 +1,6 @@
 {
   "name": "signalk-calypso-ultrasonic",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "Signal K plugin for connecting to and receiving wind data from a Calypso Ultrasonic wireless wind instrument",
   "main": "index.js",
   "scripts": {
