@@ -12,7 +12,7 @@ After getting all the requirements, make sure that node can access the BT stack.
 Install this plugin using the Signal K app store or install it manually in the Signal K server directory:
 
 ```
-npm install signalk-calypso-ultrasonic
+[sudo] npm install signalk-calypso-ultrasonic
 ```
 
 After installation, you enable & configure the plugin via the plugins page in the Signal K admin UI.
@@ -31,14 +31,21 @@ After installation, run the factory method and then you can use the `Ultrasonic`
 const { Ultrasonic } = require('signalk-calypso-ultrasonic')()
 
 const ultrasonic = new Ultrasonic({
-  setRate: 4, // Hz
+  setRate: 1, // Hz
   setCompass: 1, // Turn on compass/9DOF sensor
-  maxRetries: Infinity
+  maxRetries: Infinity,
+  turnOnHour: 6,
+  turnOffHour: 20
 })
 
 ultrasonic.on('delta', delta => handleDeltaMessage(delta))
 ultrasonic.on('data', data => handleDataMessage(data))
 ultrasonic.start()
+
+// Stop searching, disconnect & clean-up
+ultrasonic.stop()
+ultrasonic.disconnect()
+ultrasonic.removeAllListeners()
 ```
 
 The class accepts the following options:
@@ -48,6 +55,8 @@ The class accepts the following options:
 - `maxRetries: Number`; set the number of connection retries (default = `Infinity`)
 - `timeout: fn`; a function used to calculate the backoff time (default: `(retries) => (retries / 2) * 500`)
 - `name: String{ULTRASONIC}`; the name of the device used to detect the Ultrasonic. Don't change unless you have a different version with a different name.
+- `turnOnHour: Number`; hour of the day when the Ultrasonic should wake (default: 7 o'clock)
+- `turnOffHour: Number`; hour of the day when the Ultrasonic should go to sleep (default: 20 o'clock)
 
 The class emits the folowing events:
 

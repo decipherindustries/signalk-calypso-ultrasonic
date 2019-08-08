@@ -1,6 +1,6 @@
 {
   "name": "signalk-calypso-ultrasonic",
-  "version": "1.0.7",
+  "version": "1.0.10",
   "description": "Signal K plugin for connecting to and receiving wind data from a Calypso Ultrasonic wireless wind instrument",
   "main": "index.js",
   "scripts": {
@@ -14,8 +14,9 @@
   "author": "Fabian Tollenaar <fabian@decipher.industries> (https://decipher.industries)",
   "license": "Apache-2.0",
   "dependencies": {
-    "debug": "^4.0.1",
+    "@abandonware/bluetooth-hci-socket": "^0.5.3-1",
     "@abandonware/noble": "^1.9.2-1",
-    "@abandonware/bluetooth-hci-socket": "^0.5.3-1"
+    "debug": "^4.0.1",
+    "moment": "^2.24.0"
   }
 }
