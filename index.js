@@ -45,14 +45,19 @@ module.exports = function signalkCalypsoUltrasonic (app) {
         title: 'Max. number of connection retries (0 = infinite)',
         default: 0
       },
+      enableSleep: {
+        type: 'number',
+        title: 'Enable automatic sleeping of the plugin during off-hours (experimental)',
+        default: 0
+      },
       turnOnHour: {
         type: 'number',
-        title: 'Hour of the day when the Ultrasonic should be awake (e.g. 6 => 6am)',
+        title: 'Hour of the day when the Ultrasonic should be awake (experimental; e.g. 6 => 6am)',
         default: 7
       },
       turnOffHour: {
         type: 'number',
-        title: 'Hour of the day when the Ultrasonic should go to sleep (e.g. 21 => 9pm)',
+        title: 'Hour of the day when the Ultrasonic should go to sleep (experimental; e.g. 21 => 9pm)',
         default: 20
       }
       // @TODO add setAngleOffset & setWindSpeedCorrection options
@@ -79,6 +84,10 @@ module.exports = function signalkCalypsoUltrasonic (app) {
 
       if (options.hasOwnProperty('setCompass') && (options.setCompass === 1 || options.setCompass === 0)) {
         opts.setCompass = options.setCompass
+      }
+
+      if (options.hasOwnProperty('enableSleep') && (options.enableSleep === 1 || options.enableSleep === 0)) {
+        opts.sleep = (options.enableSleep === 1)
       }
 
       if (options.hasOwnProperty('maxRetries') && !isNaN(options.maxRetries)) {
